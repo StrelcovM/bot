@@ -1,9 +1,9 @@
 # Getting Started
 
 ### Reference Documentation
-For further reference, please consider the following sections:
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/3.3.0-SNAPSHOT/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/3.3.0-SNAPSHOT/maven-plugin/reference/html/#build-image)
-
+#### Now it's simple bot witch answering by simple greeting
+For start setup next properties:
+- bot_token - token received from father bot
+- bot_username - username received from father bot
+- bot_greeting - greeting string with %d symbol for name

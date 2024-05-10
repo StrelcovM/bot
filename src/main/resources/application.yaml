@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: telegram
+
+bot:
+  token: ${bot_token}
+  username: ${bot_username}
+  greeting: ${bot_greeting}
+
+logging:
+  level:
+    ru.mynewproject.telegram.Bot: ${log_level}
+  charset:
+    console: UTF-8
+    file: UTF-8
+  file:
+    name: ${user.dir}/log/${spring.application.name}.log
+  pattern:
+    console: '%d %highlight(%-5level) [%blue(%t)] %green(%C{1.}): %msg%n%throwable'
