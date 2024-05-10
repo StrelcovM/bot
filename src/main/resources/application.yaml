@@ -1,6 +1,20 @@
 spring:
   application:
     name: telegram
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${db_url}
+    username: ${db_username}
+    password: ${db_password}
+    hikari:
+      connection-test-query: SELECT 1
+      maximum-pool-size: 20
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+  liquibase:
+    change-log: classpath:db/liquibase-changeLog.xml
 
 bot:
   token: ${bot_token}
@@ -16,4 +30,5 @@ logging:
   file:
     name: ${user.dir}/log/${spring.application.name}.log
   pattern:
-    console: '%d %highlight(%-5level) [%blue(%t)] %green(%C{1.}): %msg%n%throwable'
+    console: '%d{yyyy-MM-dd HH:mm:ss.SSS} %highlight(%-5level) [%blue(%t)] %green(%C): %msg%n%throwable'
+    file: '%d{yyyy-MM-dd HH:mm:ss.SSS} %5p [%t] %C : %m%n%throwable'
