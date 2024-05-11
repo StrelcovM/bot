@@ -15,6 +15,12 @@ spring:
     show-sql: true
   liquibase:
     change-log: classpath:db/liquibase-changeLog.xml
+  data:
+    mongodb:
+      host: ${mongo_host}
+      port: ${mongo_port}
+      password: ${mongo_pass}
+      username: ${mongo_username}
 
 bot:
   token: ${bot_token}
