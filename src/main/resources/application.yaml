@@ -25,11 +25,10 @@ spring:
 bot:
   token: ${bot_token}
   username: ${bot_username}
-  greeting: ${bot_greeting}
 
 logging:
   level:
-    ru.mynewproject.telegram.Bot: ${log_level}
+    ru.mynewproject.telegram: ${log_level}
   charset:
     console: UTF-8
     file: UTF-8
