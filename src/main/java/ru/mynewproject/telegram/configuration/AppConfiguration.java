@@ -13,10 +13,10 @@ import java.util.stream.Collectors;
 @Configuration
 @RequiredArgsConstructor
 public class AppConfiguration {
-    private final List<ExecutableCommand> commands;
+    private final List<ExecutableCommand<?>> commands;
 
     @Bean
-    public Map<String, ExecutableCommand> commandMap() {
+    public Map<String, ExecutableCommand<?>> commandMap() {
         return commands.stream().collect(Collectors.toMap(ExecutableCommand::getCommand, Function.identity()));
     }
 }

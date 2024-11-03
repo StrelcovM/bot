@@ -8,12 +8,12 @@ For start setup next properties:
 - bot_username - username received from father bot
 
 Also used database postgres, and you need to configure it with next properties:
-- db_url - connection url 
-- db_user - database user
-- db_password - database password
+- SPRING_DATASOURCE_URL - connection url 
+- SPRING_DATASOURCE_USERNAME - database user
+- SPRING_DATASOURCE_PASSWORD - database password
 
 Also used database mongo, and you need to configure it with next properties:
-- mongo_host - database host
-- mongo_port - database port
-- mongo_user - database user
-- mongo_password - database password
+- SPRING_DATA_MONGODB_URI - database host
+- SPRING_DATA_MONGODB_PORT - database port
+- SPRING_DATA_MONGODB_PASSWORD - database user
+- SPRING_DATA_MONGODB_USER - database password

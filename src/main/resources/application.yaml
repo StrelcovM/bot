@@ -1,26 +1,26 @@
-spring:
+оspring:
   application:
     name: telegram
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: ${db_url}
-    username: ${db_username}
-    password: ${db_password}
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
     hikari:
       connection-test-query: SELECT 1
       maximum-pool-size: 20
   jpa:
     hibernate:
-      ddl-auto: validate
+      ddl-auto: create
     show-sql: true
   liquibase:
     change-log: classpath:db/liquibase-changeLog.xml
   data:
     mongodb:
-      host: ${mongo_host}
-      port: ${mongo_port}
-      password: ${mongo_pass}
-      username: ${mongo_username}
+      host: ${SPRING_DATA_MONGODB_URI}
+      port: ${SPRING_DATA_MONGODB_PORT}
+      password: ${SPRING_DATA_MONGODB_PASSWORD}
+      username: ${SPRING_DATA_MONGODB_USER}
 
 bot:
   token: ${bot_token}

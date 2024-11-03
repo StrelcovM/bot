@@ -1,0 +1,44 @@
+version: '3.8'
+services:
+  app:
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/telegram
+      - SPRING_DATASOURCE_USERNAME=yourusername
+      - SPRING_DATASOURCE_PASSWORD=yourpassword
+      - SPRING_DATA_MONGODB_URI=mongodb://mongo:27017/telegram
+      - SPRING_DATA_MONGODB_PORT=27017
+      - SPRING_DATA_MONGODB_USER=user
+      - SPRING_DATA_MONGODB_PASSWORD=passwrd
+      - bot_token=7080326771:AAGIYSzKFuVCvYtGsGfvJ5UOuiPpwVqg5nY
+      - bot_username=who_owes_how_much_bot
+    depends_on:
+      - db
+      - mongo
+  db:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_DB: telegram
+      POSTGRES_USER: yourusername
+      POSTGRES_PASSWORD: yourpassword
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+  mongo:
+    image: mongo:latest
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: user
+      MONGO_INITDB_ROOT_PASSWORD: passwrd
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodata:/data/db
+volumes:
+  pgdata:
+  mongodata:

@@ -7,13 +7,14 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 
 @Component
 @Slf4j
-public class StartCommandHandler implements ExecutableCommand {
+public class StartCommandHandler implements ExecutableCommand<String> {
     private final static String COMMAND = "/start";
 
     @Override
-    public void handle(Update update) {
+    public String handle(Update update) {
         Message message = update.getMessage();
         log.debug("Handled start command from user: {} ({})", message.getChatId(), message.getFrom().getUserName());
+        return "Могу подсказать время";
     }
 
     @Override
