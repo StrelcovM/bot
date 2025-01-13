@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: telegram
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    hikari:
+      connection-test-query: SELECT 1
+      maximum-pool-size: 20
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+  liquibase:
+    change-log: classpath:db/liquibase-changeLog.xml
+  data:
+    mongodb:
+      host: ${SPRING_DATA_MONGODB_URI}
+      port: ${SPRING_DATA_MONGODB_PORT}
+      password: ${SPRING_DATA_MONGODB_PASSWORD}
+      username: ${SPRING_DATA_MONGODB_USER}
+
+bot:
+  token: ${bot_token}
+  username: ${bot_username}
+
+logging:
+  level:
+    ru.mynewproject.telegram: ${log_level}
+  charset:
+    console: UTF-8
+    file: UTF-8
+  file:
+    name: ${user.dir}/log/${spring.application.name}.log
+  pattern:
+    console: '%d{yyyy-MM-dd HH:mm:ss.SSS} %highlight(%-5level) [%blue(%t)] %green(%C): %msg%n%throwable'
+    file: '%d{yyyy-MM-dd HH:mm:ss.SSS} %5p [%t] %C : %m%n%throwable'

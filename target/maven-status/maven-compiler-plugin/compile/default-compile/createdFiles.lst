@@ -1,0 +1,8 @@
+ru\mynewproject\telegram\handler\ExecutableCommand.class
+ru\mynewproject\telegram\handler\GetTimeCommandHandler.class
+ru\mynewproject\telegram\Bot.class
+ru\mynewproject\telegram\entity\mongo\UserState.class
+ru\mynewproject\telegram\TelegramApplication.class
+ru\mynewproject\telegram\handler\UnknownCommandHandler.class
+ru\mynewproject\telegram\configuration\AppConfiguration.class
+ru\mynewproject\telegram\handler\StartCommandHandler.class
